@@ -39,7 +39,7 @@
   <MyFooter />
 </template>
 
-<style>
+<style scoped>
   .all_con{
     width: 1200px;
     margin: 0 auto;

@@ -73,7 +73,7 @@
   <MyFooter />
 </template>
 
-<style>
+<style scoped>
   .membersCon{
     width: 1200px;
     margin: 0 auto;

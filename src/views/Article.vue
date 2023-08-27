@@ -53,7 +53,7 @@
   <MyFooter />
 </template>
 
-<style>
+<style scoped>
   .all_artitle_con{
     width: 1200px;
     margin: 0 auto;

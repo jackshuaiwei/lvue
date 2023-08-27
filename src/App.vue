@@ -9,26 +9,41 @@
 </script>
 
 <template>
-  <div class="header">
-    <div class="header_con">
-      <div class="iconCon">
-        <span class="iconDetail">Lhlab</span>
-      </div>
-      <div class="titleCon">
-        <router-link to="/" class="titleDetail">主页</router-link>
-        <router-link to="/search" class="titleDetail">研究方向</router-link>
-        <router-link to="/article" class="titleDetail">发表文章</router-link>
-        <router-link to="/members" class="titleDetail">成员</router-link>
-        <router-link to="/news" class="titleDetail">新闻</router-link>
-        <router-link to="/contact" class="titleDetail">联系方式</router-link>
-      </div>
+  <div class="headerParent">
+    <div class="headerParentLogo">
+      <div class="headerParentLogoImg">
+        <img src="/img/logo.png" alt="">
+      </div> 
     </div>
   </div>
-  
+  <div class="newHeaderParent">
+    <div class="newHeader">
+      <n-breadcrumb>
+        <n-breadcrumb-item>
+          <router-link to="/" class="titleDetail">首页</router-link>
+        </n-breadcrumb-item>
+        <n-breadcrumb-item>
+          <router-link to="/search" class="titleDetail">研究中心概况</router-link>
+        </n-breadcrumb-item>
+        <n-breadcrumb-item>
+          <router-link to="/article" class="titleDetail">师资队伍</router-link>
+        </n-breadcrumb-item>
+        <n-breadcrumb-item>
+          <router-link to="/members" class="titleDetail">研究方向</router-link>
+        </n-breadcrumb-item>
+        <n-breadcrumb-item>
+          <router-link to="/news" class="titleDetail">团队成员</router-link>
+        </n-breadcrumb-item>
+        <n-breadcrumb-item>
+          <router-link to="/contact" class="titleDetail">招贤纳士</router-link>
+        </n-breadcrumb-item>
+      </n-breadcrumb>
+    </div>
+  </div>
   <router-view/>
 </template>
 
-<style>
+<style scoped>
   .header{
     width: 100%;
     background-color: #63065f;
@@ -57,18 +72,46 @@
     color: #fff;
   }
 
-  .titleDetail{
-    font-size: 20px;
-    line-height: 50px;
-    color: #fff;
-    margin-left: 50px;
+  .headerParent{
+    width: 100%;
+    height: 156px;
+    background-image: url("/img/header-bg.png");
   }
 
-  .router-link-active{
+  .headerParentLogo{
+    width: 1600px;
+    margin: 0 auto;
+    height: 156px;
+    display: flex;
+    align-items: center;
+  }
+
+  .headerParentLogoImg{
+    width: 376px;
+    height: 90px;
+  }
+
+  .newHeaderParent{
+    width:100%;
+    background-color: #fff;
+  }
+
+  .newHeader{
+    width:1600px;
+    height: 67px;
+    margin: 0 auto;
+  }
+
+  .titleDetail{
+    display: block;
     font-size: 20px;
-    line-height: 50px;
-    color: #fff;
-    margin-left: 50px;
-    border-bottom: 2px solid #fff;
+    line-height: 60px;
+    margin-left: 30px;
+    margin-right: 30px;
+    color: #000;
+  }
+  
+  .router-link-active{
+    color: cornflowerblue;
   }
 </style>

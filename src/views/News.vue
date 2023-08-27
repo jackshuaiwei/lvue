@@ -46,7 +46,7 @@
   <MyFooter />
 </template>
 
-<style>
+<style scoped>
   .newsCon{
     width: 1200px;
     margin: 0 auto;

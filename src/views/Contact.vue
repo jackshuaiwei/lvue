@@ -55,7 +55,7 @@
   <MyFooter />
 </template>
 
-<style>
+<style scoped>
   .contactCon{
     width: 1200px;
     margin: 0 auto;
