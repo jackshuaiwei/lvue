@@ -2,21 +2,21 @@
   <div class="footer">
     <div class="footerMainContent">
       <div class="footerMainContentLeft">
-        <img src="/img/nju.jpg" class="footerImg">
+        <img src="/img/school.png" class="footerImg">
       </div>
       <div class="footerMainContentRight">
         <div class="footerText">
-          <a href="#">南京大学</a>
+          <a href="#">浙江大学</a>
            | 
           <a href="#">物理学院</a>
            | 
-          <a href="#">固体微结构物理国家重点实验室</a>
+          <a href="#">复杂与生命系统物理研究中心</a>
         </div>
         <div class="footerText">
-          地址：江苏省南京市鼓楼区
+          地址：浙江省杭州市西湖区浙大路38号
         </div>
         <div class="footerText">
-          Copyright © 2019 <a href="#">Biomech NJU </a>. All Rights Reserved
+          Copyright © 2023 <a href="#">Biomech ZJU </a>. All Rights Reserved
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
   }
 
   .footerMainContent{
-    width:600px;
+    width:800px;
     margin: 0 auto;
     height: 100%;
     display: flex;
@@ -40,10 +40,8 @@
   }
 
   .footerMainContentLeft{
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    border-radius: 50%;
+    width: 246px;
+    height: 70px;
     overflow: hidden;
   }
 

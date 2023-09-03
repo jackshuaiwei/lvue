@@ -7,48 +7,71 @@
     },
     data(){
       return {
-        "contactList":{
-            "welcome":"本课题组常年招收各类优秀的研究人员，包括博士后、博士、硕士及本科生，有意者请联系曹毅教授（caoyi@nju.edu.cn)，简要说明申请理由，并附上您的简历。",
-            "contactDetail":{"contact1":"南京大学固体微结构国家重点实验室","contact2":"物理学院","contact3":"人工协同创新中心","contact4":"南京大学，南京，中国"},
-            "address":{"add1":"唐仲英楼A508","add2":"南京市鼓楼区金银街15号","add3":"210093"},
-            "emailTel":{"email":"caoyi@nju.ed.cn","tel1":"025-83688960（教授办公室）","tel2":"025-83688980（学生办公室）"}
-        }
+        postList:[
+          {postName:"博士后2-3名",postDesc:["独立承担课题研究","协助指导研究生"],postRequire:["具有博士学位，具有物理、生物、化学、生物医学工程、材料、仪器等专业背景，熟悉生物物理方向实验技术与仪器等优先","近三年以第一作者发表过高水平SCI论文","具有独立完成课题工作的能力","工作踏实勤奋；具有扎实的生物物理相关理论基础，较强的实验操作能力，严谨的科学态度和良好的团队协作意识","年龄不超过35岁，身心健康；具有较强的英语阅读和写作能力"],postTreatment:"在浙江大学规定基础上，物理高等研究院将给予倾斜，并可根据研究成果由课题组给予额外奖励，保障有竞争力的薪酬。具体待遇面谈。"},
+          {postName:"科研助理1-2名",postDesc:["协助培养研究生，为相关课题提供有力支持","协助PI负责实验室管理","在PI指导下做探索性课题"],postRequire:["具有本科或以上学位，具有物理学、化学、材料学、生物、生物医学工程、仪器等专业背景，熟悉生物物理方面实验技术与仪器操作等优先","在相关领域发表过学术论文优先","工作踏实勤奋；具有扎实的生物物理理论基础，较强的实验操作能力，严谨的科学态度和良好的团队协作意识","身心健康，具有较强的英语阅读和写作能力","未来有意向继续攻读博士学位者优先，表现优秀者有机会直接转入博士生研究计划"],postTreatment:"薪资待遇浙江大学相关规定执行，享受国家规定的社会保险等福利"},
+        ],
       }
     },
-    methods:{
-      choseYear(year,index){
-        this.defalutYearIndex = index;
-        this.defalutArtitleList = this.artitleObj[year];
-      }
-    }
   }
 </script>
 <template>
-  <div class="contactCon">
-    <div class="contactCon2">
-        <div class="contactWelcome">
-            <span style="width: 100px;display: inline-block;">欢迎加入</span>
+  <div class="commonContent">
+    <div class="commonContentLeft">
+      <div class="commonContentLeftFirstTitle">
+        招生招聘
+      </div>
+    </div>
+    <div class="commonContentRight">
+      <div class="commonContentRightTitle">
+        <div class="commonContentRightTitleMain">诚聘英才</div>
+        <div class="commonContentRightTitleDetail">
+          <span>当前位置：</span>
+          <n-breadcrumb>
+            <n-breadcrumb-item separator="|">首页 </n-breadcrumb-item>
+            <n-breadcrumb-item separator="|">招贤纳士 </n-breadcrumb-item>
+            <n-breadcrumb-item separator="|">诚聘英才 </n-breadcrumb-item>
+          </n-breadcrumb>
         </div>
-        <div>&nbsp;&nbsp;{{ contactList.welcome }}</div>
-        <div class="contactDetail">
-            <span style="width: 100px;display: inline-block;">联系方式</span>
+      </div>
+      <div class="commonContentRightContent">
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浙江大学物理高等研究院复杂与生命系统物理研究中心成立于2023年3月，是浙江大学大力发展的研究方向之一。研究中心是由欧阳颀院士领衔，目前研究方向包括合成生物学、系统生物学、蛋白质机器、DNA信息存储、生物大分子、仿生材料与工程、细胞力学、细胞冷冻电子断层技术、活性物质等。
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;复杂与生命系统物理研究中心招聘独立PI、博士后、实验技术岗。欢迎物理、生物、化学、计算机、数学、信息、材料等学科专业的本科生、研究生加入。
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本课题组研究方向包括单分子生物物理、软物质、生物力学、柔性电子器件等研究方向。
+        </p>
+        <div class="onePost" v-for="(onePost,index) in postList">
+          <div class="postName">
+            岗位：{{ onePost.postName }}
+          </div>
+          <div class="postDesc">
+            <p>岗位描述</p>
+            <ul>
+              <li v-for="(oneDesc,rindex) in onePost.postDesc">{{ oneDesc }}</li>
+            </ul>
+          </div>
+          <div class="postRequire">
+            <p>岗位要求</p>
+            <ul>
+              <li v-for="(oneRequire,rindex) in onePost.postRequire">{{ oneRequire }}</li>
+            </ul>
+          </div>
+          <div class="postTreatment">
+            <p>岗位待遇</p>
+            <p>{{ onePost.postTreatment }}</p>
+          </div>
         </div>
-        <div>{{ contactList.contactDetail.contact1 }}</div>
-        <div>{{ contactList.contactDetail.contact2 }}</div>
-        <div>{{ contactList.contactDetail.contact3 }}</div>
-        <div>{{ contactList.contactDetail.contact4 }}</div>
-        <div class="contactAdd">
-            <span style="width: 100px;display: inline-block;">地址</span>
-        </div>
-        <div>{{ contactList.address.add1 }}</div>
-        <div>{{ contactList.address.add2 }}</div>
-        <div>{{ contactList.address.add3 }}</div>
-        <div class="contactEmailTel">
-            <span style="width: 100px;display: inline-block;">邮箱/电话</span>
-        </div>
-        <div>{{ contactList.emailTel.email }}</div>
-        <div>{{ contactList.emailTel.tel1 }}</div>
-        <div>{{ contactList.emailTel.tel2 }}</div>
+        <p style="margin-top: 30px;">
+          有意应聘者请发送个人简历、研究简介和发表论文至：<a href="mailto:leihai@zju.edu.cn">leihai@zju.edu.cn</a>。对符合条件的申请者，我们将尽快回复并通知面试。有任何问题我们随时联系。
+        </p>
+        <p>
+          欢迎青年才俊加入我们的研究团队
+        </p>
+      </div>
     </div>
   </div>
   
@@ -56,32 +79,11 @@
 </template>
 
 <style scoped>
-  .contactCon{
-    width: 1200px;
-    margin: 0 auto;
-    background-color: #fff;
-    overflow: hidden;
-    min-height: 900px;
+  .postName,.postRequire,.postTreatment{
+    margin-top: 30px;
   }
 
-  .contactCon2{
-    width: 1150px;
-    margin: 30px auto 0;
-    background-color: #fff;
-    overflow: hidden;
-    line-height: 40px;
+  .postName{
+    font-weight: bold;
   }
-
-  .contactWelcome,.contactDetail,.contactAdd,.contactEmailTel{
-    margin-top: 20px;
-    border-left: 5px solid #6a0061;
-    border-bottom: 1px solid #DDD;
-    padding-left: 15px;
-    font-weight: 700;
-    color: #555;
-    font-size: 16px;
-    line-height: 27px;
-  }
-
-  
 </style>

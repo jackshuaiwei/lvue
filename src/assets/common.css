@@ -1,0 +1,77 @@
+.commonContent{
+    width: 1400px;
+    min-height: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .commonContentLeft{
+    width: 260px;
+  }
+
+  .commonContentRight{
+    width: 1000px;
+  }
+
+  .commonContentLeftFirstTitle{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #0f429b;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+  }
+
+  .commonContentLeftTitle{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #eee;
+  }
+
+  .commonContentLeftTitle:hover{
+    cursor: pointer;
+    background-color: #eee;
+    color: #0F429B;
+  }
+
+  .commonContentLeftTitleActive{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    text-align: center;
+    color: #0F429B;
+    background-color: #eee;
+    font-weight: bold;
+  }
+
+  .commonContentLeftTitleActive:hover{
+    cursor: pointer;
+  }
+
+  .commonContentRightTitle{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #CBCBCB;
+    align-items: center;
+  }
+
+  .commonContentRightTitleMain{
+    font-size: 20px;
+    color: #0F429B;
+    line-height: 50px;
+    border-bottom: 5px solid #CBCBCB;
+  }
+
+  .commonContentRightTitleDetail{
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+  }

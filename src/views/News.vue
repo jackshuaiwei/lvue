@@ -7,39 +7,53 @@
     },
     data(){
       return {
-        "newsList":[
-            {"time":"2021-05-24","content":"【硕士答辩】热烈祝贺本课题组硕士俞奕飞毕业答辩圆满结束！"},
-            {"time":"2021-05-25","content":"【硕士答辩】热烈祝贺本课题组硕士俞奕飞毕业答辩圆满结束！"},
-            {"time":"2021-05-26","content":"【硕士答辩】热烈祝贺本课题组硕士俞奕飞毕业答辩圆满结束！"},
-            {"time":"2021-05-27","content":"【硕士答辩】热烈祝贺本课题组硕士俞奕飞毕业答辩圆满结束！"},
-            {"time":"2021-05-28","content":"【硕士答辩】热烈祝贺本课题组硕士俞奕飞毕业答辩圆满结束！"},
-            {"time":"2021-05-29","content":"【硕士答辩】热烈祝贺本课题组硕士俞奕飞毕业答辩圆满结束！"},
-            {"time":"2021-05-21","content":"【硕士答辩】热烈祝贺本课题组硕士俞奕飞毕业答辩圆满结束！"},
-            {"time":"2021-05-22","content":"【硕士答辩】热烈祝贺本课题组硕士俞奕飞毕业答辩圆满结束！"},
-            {"time":"2021-05-23","content":"【硕士答辩】热烈祝贺本课题组硕士俞奕飞毕业答辩圆满结束！"},
-        ]
+        newsList:[
+            {year:"2023-07",day:"04",title:"数十载各追梦，重逢惹情牵——浙江大学物理学院举办88级入学三十五周年返校活动"},
+            {year:"2023-06",day:"12",title:"校友企业——物理学院师生走访校友企业杭州秋光科技有限公司"},
+            {year:"2023-05",day:"29",title:"杰出校友——“求是情深 梦想物院”浙江大学物理学院校友企业家交流会成功举办"},
+        ],
+        activeContent:"",
       }
     },
     methods:{
-      choseYear(year,index){
-        this.defalutYearIndex = index;
-        this.defalutArtitleList = this.artitleObj[year];
-        console.log(this.artitleObj[2023]);
-      }
+      
     }
   }
 </script>
 <template>
-  <div class="newsCon">
-    <div class="newsCon2">
-        <div class="newsTitle">
-            <span style="width: 100px;display: inline-block;">时间</span>
-            <span style="">新闻 & 活动</span>
+  <div class="commonContent">
+    <div class="commonContentLeft">
+      <div class="commonContentLeftFirstTitle">
+        新闻动态
+      </div>
+
+      <!-- <div class="commonContentLeftTitle" v-for="(oneTitle,index) in titleList" :class="activeTitle == oneTitle.index ? 'commonContentLeftTitleActive' : ''" @click="changeActiveTitle(oneTitle.index,oneTitle.title)">
+        {{ oneTitle.title }}
+      </div> -->
+    </div>
+    <div class="commonContentRight">
+      <div class="commonContentRightTitle">
+        <div class="commonContentRightTitleMain">新闻动态</div>
+        <div class="commonContentRightTitleDetail">
+          <span>当前位置：</span>
+          <n-breadcrumb>
+            <n-breadcrumb-item separator="|">首页</n-breadcrumb-item>
+            <n-breadcrumb-item separator="|">新闻动态</n-breadcrumb-item>
+          </n-breadcrumb>
         </div>
+      </div>
+      <div class="commonContentRightContent">
         <div class="oneNew" v-for="(oneNew,index) in newsList">
-            <div class="oneNewTime">{{ oneNew.time }}</div>
-            <div class="oneNewDetail">{{ oneNew.content }}</div>
+          <div class="oneNewDate">
+            <div class="oneNewDateDay">{{ oneNew.day }}</div>
+            <div class="oneNewDateYear">{{ oneNew.year }}</div>
+          </div>
+          <div class="oneNewTitle">
+            <div class="oneNewTitleBig">{{ oneNew.title }}</div>
+            <div class="oneNewTitleSmall">{{ oneNew.title }}</div>
+          </div>
         </div>
+      </div>
     </div>
   </div>
   
@@ -47,50 +61,59 @@
 </template>
 
 <style scoped>
-  .newsCon{
-    width: 1200px;
-    margin: 0 auto;
-    background-color: #fff;
-    overflow: hidden;
-    min-height: 900px;
-  }
-
-  .newsCon2{
-    width: 1150px;
-    margin: 0 auto;
-    background-color: #fff;
-    overflow: hidden;
-  }
-
-  .newsTitle{
+  .oneNew{
+    display: flex;
+    width: 100%;
+    height: 122px;
     margin-top: 30px;
-    background-color: #6a0061;
-    height: 40px;
-    line-height: 40px;
+    border: 1px solid #f1f1f1;
+  }
+
+  .oneNew:hover{
+    cursor: pointer;
+    background-color: #0e3989;
+  }
+
+  .oneNew:hover div{
     color: #fff;
   }
 
-  .oneNew{
-    height: 40px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #ccc;
+  .oneNewDate{
+    width: 130px;
+    margin-top: 18px;
   }
 
-  .oneNewTime{
-    width: 100px;
-    line-height: 40px;
-    height: 100%;
+  .oneNewTitle{
+    margin-left: 50px;
+  }
+  .oneNewDateDay{
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    color: #0F429B;
+    border-right: 1px solid #f1f1f1;
+  }
+
+  .oneNewDateYear{
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    color: #0F429B;
+    border-right: 1px solid #f1f1f1;
+  }
+
+  .oneNewTitleBig{
+    width: 100%;
+    font-size: 18px;
+    color: #333333;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .oneNewTitleSmall{
+    width: 100%;
     font-size: 16px;
-    font-family: Arial;
+    color: #999999;
+    margin-top: 20px;
   }
-
-  .oneNewTime{
-    line-height: 40px;
-    height: 100%;
-    font-family: Arial;
-    font-size: 16px;
-  }
-
-  
 </style>

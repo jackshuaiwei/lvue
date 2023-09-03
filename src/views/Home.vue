@@ -1,5 +1,4 @@
 <template>
-  <Header />
   <n-carousel show-arrow direction="vertical" dot-placement="right" style="width: 100%; height: 608px">
     <img
       class="carousel-img"

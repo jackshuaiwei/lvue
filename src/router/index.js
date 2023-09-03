@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 // import HomeView from '../views/HomeView.vue'
 import Home from '../views/Home.vue'
 import Search from '../views/Search.vue'
-import Article from '../views/Article.vue'
+import SearchCenter from '../views/SearchCenter.vue'
+import Direction from '../views/Direction.vue'
 import Members from '../views/Members.vue'
 import News from '../views/News.vue'
 import Contact from '../views/Contact.vue'
@@ -11,19 +12,19 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       component: Home
     },
     {
-      path: '/search',
-      name: 'search',
-      component: Search
+      path: '/searchCenter',
+      name: 'searchCenter',
+      component: SearchCenter
     },
     {
-      path: '/article',
-      name: 'article',
-      component: Article
+      path: '/direction',
+      name: 'direction',
+      component: Direction
     },
     {
       path: '/members',
